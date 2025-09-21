@@ -13,6 +13,12 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    public const AVAILABLE_ROLES = [
+        'ROLE_ADMIN',
+        'ROLE_USER',
+        'ROLE_TESTER',
+    ];
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
