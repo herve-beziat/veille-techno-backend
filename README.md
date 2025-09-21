@@ -14,12 +14,16 @@ Il a été conçu dans un contexte de comparaison technologique (**Symfony vs Ne
 
 1. Cloner le projet :
 ```bash
-git clone https://github.com/ton-compte/veille-techno-backend.git
+git clone https://github.com/herve-beziat/veille-techno-backend.git
 cd veille-techno-backend
 ```
 
 2. Lancer l’environnement Docker :
 ```bash
+# Première fois (ou après modification du Dockerfile)
+docker compose up -d --build
+
+# Lancements suivants
 docker compose up -d
 ```
 
@@ -29,9 +33,9 @@ docker exec -it symfony-backend bash
 composer install
 ```
 
-4. Exécuter les migrations :
+4. Exécuter les migrations (dans le conteneur Symfony) :
 ```bash
-php bin/console doctrine:migrations:migrate
+docker exec -it symfony-backend php bin/console doctrine:migrations:migrate
 ```
 
 ---
@@ -54,8 +58,8 @@ Bearer <votre_token>
 
 - **Swagger UI** : [http://localhost:8080/api/doc](http://localhost:8080/api/doc)  
 - **Documentation PDF** :  
-  - [API Tests (Swagger)](./docs/API_Tests_Swagger.pdf)  
-  - [Veille Technologique (Symfony vs NestJS vs Spring Boot)](./docs/Veille_Techno_Complet.pdf)  
+  - [API Tests (Swagger)](./docs/API_Documentation_Checklist.pdf)  
+  - [Veille Technologique (Symfony vs NestJS vs Spring Boot)](./docs/rapport-veille-back.pdf)  
 
 ---
 
@@ -88,7 +92,7 @@ Bearer <votre_token>
 ## 📌 Choix technologique
 
 Le projet a retenu **Symfony** après une étude comparative avec **NestJS** et **Spring Boot**.  
-➡️ Voir le document : [Veille Technologique](./docs/Veille_Techno_Complet.pdf)
+➡️ Voir le document : [Veille Technologique](./docs/rapport-veille-back.pdf)
 
 ---
 
