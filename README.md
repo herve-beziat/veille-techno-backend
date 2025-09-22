@@ -7,6 +7,7 @@ Il a été conçu dans un contexte de comparaison technologique (**Symfony vs Ne
 - Gestion des listes (BoardList)  
 - Gestion des cartes (Card)  
 - Documentation interactive via Swagger (**NelmioApiDocBundle**)  
+- Tests automatisés avec **PHPUnit**
 
 ---
 
@@ -86,6 +87,31 @@ Bearer <votre_token>
 - `GET /api/cards?list_id=xx` → lister les cartes d’une liste  
 - `PUT /api/cards/{id}` → mettre à jour une carte  
 - `DELETE /api/cards/{id}` → supprimer une carte  
+
+---
+---
+
+## 🧪 Tests
+
+Les tests unitaires et fonctionnels sont écrits avec  **PHPUnit** et couvrent :
+- Authentification (register, login, me)
+- BoardLists (create, update, delete)
+- Cards (create, update, delete) 
+
+Lancer les tests (dans le conteneur Symfony)
+```bash
+php bin/phpunit --testdox
+```
+
+Générer un rapport HTML lisible :
+```bash
+php bin/phpunit --testdox-html var/test_report.html
+```
+
+Copier le rapport sur l'hôte (Windows) :
+```bash
+docker cp symfony-backend:/var/www/html/var/test_report.html ./test_report.html
+```
 
 ---
 
