@@ -89,7 +89,6 @@ Bearer <votre_token>
 - `DELETE /api/cards/{id}` → supprimer une carte  
 
 ---
----
 
 ## 🧪 Tests
 
@@ -98,17 +97,17 @@ Les tests unitaires et fonctionnels sont écrits avec  **PHPUnit** et couvrent :
 - BoardLists (create, update, delete)
 - Cards (create, update, delete) 
 
-Lancer les tests (dans le conteneur Symfony)
+1. Lancer les tests (dans le conteneur Symfony)
 ```bash
 php bin/phpunit --testdox
 ```
 
-Générer un rapport HTML lisible :
+2. Générer un rapport HTML lisible :
 ```bash
 php bin/phpunit --testdox-html var/test_report.html
 ```
 
-Copier le rapport sur l'hôte (Windows) :
+3. Copier le rapport sur l'hôte (Windows) :
 ```bash
 docker cp symfony-backend:/var/www/html/var/test_report.html ./test_report.html
 ```
