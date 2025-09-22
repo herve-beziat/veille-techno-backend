@@ -41,3 +41,7 @@ Thumbs.db
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+
+# Rapport PHPUnit
+/test_report.html
+/var/test_report.html
